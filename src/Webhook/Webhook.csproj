@@ -7,6 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>G:\Dev\DotNet\webhook-kibana\src\Webhook\Webhook.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591;8618</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Discord.Net.Webhook" Version="2.2.0" />

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Webhook</name>
+    </assembly>
+    <members>
+        <member name="P:Webhook.Infrastructure.ErrorResult.Error">
+            <summary>
+            Contenu de l'erreur
+            </summary>
+        </member>
+        <member name="P:Webhook.Infrastructure.ErrorResult.ErrorCode">
+            <summary>
+            Code de l'erreur
+            </summary>
+        </member>
+    </members>
+</doc>

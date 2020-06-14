@@ -7,5 +7,6 @@ namespace Webhook.Dtos
 {
     public class KibanaDto
     {
+        public string Test { get; set; }
     }
 }

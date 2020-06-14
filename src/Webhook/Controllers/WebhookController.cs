@@ -48,6 +48,12 @@ namespace Product.API.Controllers
             return NoContent();
         }
 
+        [HttpGet]
+        public string Get()
+        {
+            return "Test";
+        }
+
         private SendGridMessage BuildSendGridMessage(KibanaDto kibanaDto, string? emails)
         {
             if( emails == null)

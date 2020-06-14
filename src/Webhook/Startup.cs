@@ -37,30 +37,21 @@ namespace Webhook
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
             services.AddAutoMapper(Assembly.Load(typeof(Startup).Assembly.GetName().Name!));
-            services.AddSwagger("1.0");
+            services.AddSwagger("WebHook");
 
             services.AddHealthChecks();
             services.AddDependencies(appSettings);
-            services.AddHttpContextAccessor();
-
-            // Autorise l'accès à des ressources gRPC en HTTP.
-            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
         }
 
         public void Configure(IApplicationBuilder app, IOptions<AppSettings> appSettings, IMapper mapper)
         {
             mapper.ConfigurationProvider.AssertConfigurationIsValid();
-
           
             app.UseDeveloperExceptionPage();
-            app.UseSwaggerConfig("1.0", "", "http");
-            
+            app.UseSwaggerConfig("WebHook", "", "http");
 
             app.UseRouting();
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-
-            app.UseAuthentication();
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
